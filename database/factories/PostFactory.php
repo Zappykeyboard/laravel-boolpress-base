@@ -9,7 +9,7 @@ use App\Post;
 $factory->define(Post::class, function (Faker $faker) {
     return [
       'author'=> $faker->userName,
-      'body'=> $faker->text,
+      'content'=> $faker->text,
       'creation_date'=> $faker->dateTimeThisDecade,
     ];
 });
