@@ -16,7 +16,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest('creation_date')->limit(5)->get();
-        return view('page.home', compact('posts'));
+        $categories=Category::all();
+        return view('page.home', compact('posts', 'categories'));
     }
 
     /**

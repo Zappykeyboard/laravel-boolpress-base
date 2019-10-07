@@ -1,6 +1,13 @@
 @extends('layout.base')
 
 @section('content')
+
+  <div class="categories">
+    @foreach ($categories as $cat)
+      <a href="#">{{$cat->name}}</a>
+    @endforeach
+  </div>
+
   <ul>
     @foreach ($posts as $post)
       <li>
