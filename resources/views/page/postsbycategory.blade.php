@@ -1,13 +1,8 @@
 @extends('layout.base')
 
+
 @section('content')
-
-  <div class="categories">
-    @foreach ($categories as $cat)
-      |<a href="{{route('category.show', $cat->id)}}">{{$cat->name}}</a>
-    @endforeach
-  </div>
-
+  Showing posts for category: {{$catName}}
   <ul>
     @foreach ($posts as $post)
       <li>
@@ -18,5 +13,4 @@
       </li>
     @endforeach
   </ul>
-
 @endsection

@@ -49,7 +49,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $posts = Post::where('category_id', '=', $id)->get();
+        $catName = Category::findOrFail($id)->name;
+
+        return view('page.postsbycategory', compact('posts','catName'));
     }
 
     /**
