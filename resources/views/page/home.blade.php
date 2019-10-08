@@ -13,7 +13,6 @@
       <li>
         <p>Title: {{$post->title}}</p>
         <p>By: {{$post-> author}}</p>
-        <p>{{$post->content}}</p>
         <p>Created at: {{$post->creation_date}}</p>
       </li>
     @endforeach

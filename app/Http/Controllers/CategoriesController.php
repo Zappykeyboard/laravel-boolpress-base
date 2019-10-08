@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
 use App\Category;
+use App\Post;
 
-class PostController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest('creation_date')->limit(5)->get();
-        $categories=Category::all();
-        return view('page.home', compact('posts', 'categories'));
+        //
     }
 
     /**
@@ -49,7 +47,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
+      $posts = Post::where('category_id', '=', $id)->get();
+      $catName = Category::findOrFail($id)->name;
 
+      return view('page.postsbycategory', compact('posts','catName'));
     }
 
     /**

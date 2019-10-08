@@ -12,4 +12,4 @@
 */
 
 Route::get('/', 'PostController@Index')->name('post.index');
-Route::get('category/{id}', 'PostController@show')->name('category.show');
+Route::get('category/{id}', 'CategoriesController@show')->name('category.show');
