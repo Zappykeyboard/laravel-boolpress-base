@@ -15,3 +15,7 @@ Route::get('/', 'PostController@Index')->name('post.index');
 Route::get('/category/{id}', 'CategoriesController@show')->name('category.show');
 
 Route::get('/post/{id}', 'PostController@show')->name('post.show');
+
+Route::get('/admin/post/create', 'PostController@create')->name('post.create');
+
+Route::post('/', 'PostController@store')->name('post.store');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use DateTime;
 
 class PostController extends Controller
 {
@@ -27,7 +28,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+         $categories = Category::all();
+
+         return view('page.postcreate'
+                , compact('categories'));
     }
 
     /**
@@ -38,7 +42,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+          'title'=>'required',
+          'author'=>'required',
+          'content'=>'required',
+          'category_id'=>'required'
+        ]);
+        $validated['creation_date'] = now()->toDateTimeString();//UTC
+      
+        Post::create($validated);
+
+        return redirect('/');
     }
 
     /**

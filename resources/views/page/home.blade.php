@@ -1,6 +1,9 @@
 @extends('layout.base')
 
 @section('content')
+  <div class="">
+    <a href="{{route('post.create')}}">Nuovo Post...</a>
+  </div>
 
   <div class="categories">
     @foreach ($categories as $cat)
