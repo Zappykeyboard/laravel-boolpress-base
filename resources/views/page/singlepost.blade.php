@@ -7,6 +7,8 @@
   <p>Created at: {{$post->creation_date}}</p>
   <p>Category: {{$catName}}</p>
   <a href="{{route('post.edit', $post->id)}}">Edit</a>
+  -----------------------------
+  <a href="{{route('post.destroy', $post->id)}}">!!DELETE!!</a>
   <p>{!!$post->content!!}</p>
 
 @endsection
