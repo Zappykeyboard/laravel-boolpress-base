@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->text('author');
             $table->text('content');
+            $table->text('title');
             $table->dateTime('creation_date');
         });
     }

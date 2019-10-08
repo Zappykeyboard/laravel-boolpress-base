@@ -4,7 +4,7 @@
 
   <div class="categories">
     @foreach ($categories as $cat)
-      <a href="#">{{$cat->name}}</a>
+      |<a href="#">{{$cat->name}}</a>
     @endforeach
   </div>
 
