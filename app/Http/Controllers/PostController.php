@@ -48,8 +48,8 @@ class PostController extends Controller
           'content'=>'required',
           'category_id'=>'required'
         ]);
-        $validated['creation_date'] = now()->toDateTimeString();//UTC
-      
+        $validated['creation_date'] = now()->toDateTimeString();//UTC?
+
         Post::create($validated);
 
         return redirect('/');
