@@ -49,7 +49,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
-
+        $post = Post::findOrFail($id);
+        $catName = Category::findOrFail($post->category_id)->name;
+        //dd($post, $catName);
+        return view('page.singlepost',compact('post','catName'));
     }
 
     /**

@@ -15,6 +15,7 @@
         <p>By: {{$post-> author}}</p>
         <p>Created at: {{$post->creation_date}}</p>
         <p>Category: {{$categories[$post->category_id]->name}}</p>
+        <p> <a href="{{route('post.show', $post->id)}}">Leggi il post</a> </p>
       </li>
     @endforeach
   </ul>
