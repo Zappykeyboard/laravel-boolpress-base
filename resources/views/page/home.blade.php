@@ -14,6 +14,7 @@
         <p>Title: {{$post->title}}</p>
         <p>By: {{$post-> author}}</p>
         <p>Created at: {{$post->creation_date}}</p>
+        <p>Category: {{$categories[$post->category_id]->name}}</p>
       </li>
     @endforeach
   </ul>
