@@ -2,15 +2,20 @@
 
 
 @section('content')
-  Showing posts for category: {{$catName}}
-  <ul>
-    @foreach ($posts as $post)
-      <li>
-        <p>Title: {{$post->title}}</p>
-        <p>By: {{$post-> author}}</p>
-        <p>Created at: {{$post->creation_date}}</p>
-        <p> <a href="{{route('post.show', $post->id)}}">Leggi il post</a> </p>
-      </li>
-    @endforeach
-  </ul>
+  <div class="container">
+
+    <div class="posts">
+      Showing posts for category: {{$catName}}
+        @foreach ($posts as $post)
+          <div class='post'>
+            <p>Title: {{$post->title}}</p>
+            <p>By: {{$post-> author}}</p>
+            <p>Created at: {{$post->creation_date}}</p>
+            <p>Category: {{$catName}}</p>
+            <p> <a href="{{route('post.show', $post->id)}}">Leggi il post</a> </p>
+          </div>
+        @endforeach
+    </div>
+  </div>
+
 @endsection
