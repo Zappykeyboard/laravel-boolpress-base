@@ -84,10 +84,10 @@ header {
   font-weight: bold;
 }
 
-.input input {
+.input input,
+textarea {
   width: 100%;
   line-height: 2rem;
-  white-space: initial;
 }
 
 .input-content {
