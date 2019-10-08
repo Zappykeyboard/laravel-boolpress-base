@@ -65,7 +65,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $catName = Category::findOrFail($post->category_id)->name;
-        //dd($post, $catName);
+
         return view('page.singlepost',compact('post','catName'));
     }
 
@@ -77,7 +77,11 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+      $post = Post::findOrFail($id);
+      $categories = Category::all();
+
+      return view('page.postedit', compact('post', 'categories'));
+
     }
 
     /**
