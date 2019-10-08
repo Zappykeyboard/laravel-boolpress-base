@@ -5,21 +5,21 @@
     <form class='post-form'  action="{{route('post.update', $post->id)}}" method="post">
       @csrf
       @method('POST')
-      <div class="">
+      <div class="input">
         <label for="title">Title:</label>
         <input type="text" name="title" value="{{$post->title}}">
       </div>
-      <div class="">
+      <div class="input">
         <label for="author">Author:</label>
         <input type="text" name="author" value="{{$post->author}}">
       </div>
-      <div class="">
+      <div class="input">
         <label for="content">Content:</label>
-        <input type="text" name="content" value="{{$post->content}}">
+        <textarea class="input-content" type="text" name="content" >Admin dice:</textarea>
       </div>
-      <div class="">
-        <label for="categories">Categories:</label>
-        <select class="" name="category_id" >
+      <div class="input">
+        <label for="categories">Category:</label>
+        <select class="input" name="category_id" >
           @foreach ($categories as $cat)
             <option
             @if ($post->category_id == $cat->id)
@@ -29,7 +29,9 @@
           @endforeach
         </select>
       </div>
-      <button type="submit" name="button">Invia</button>
+      <div class="input">
+        <button type="submit" name="button">Invia</button>
+      </div>
     </form>
   </div>
 

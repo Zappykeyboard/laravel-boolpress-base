@@ -67,3 +67,31 @@ header {
   background-color: green;
 }
 
+.post-form {
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input {
+  margin: 10px 0;
+}
+
+.input label {
+  font-weight: bold;
+}
+
+.input input {
+  width: 100%;
+  line-height: 2rem;
+  white-space: initial;
+}
+
+.input-content {
+  width: 1000px;
+  height: 500px;
+}
+

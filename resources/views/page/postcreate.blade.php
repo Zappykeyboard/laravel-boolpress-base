@@ -5,27 +5,30 @@
     <form class="post-form"  action="{{route('post.store')}}" method="post">
       @csrf
       @method('POST')
-      <div class="">
+      <div class="input">
         <label for="title">Title:</label>
         <input type="text" name="title" value="Lorem ipsum">
       </div>
-      <div class="">
+      <div class="input">
         <label for="author">Author:</label>
         <input type="text" name="author" value="Admin">
       </div>
-      <div class="">
+      <div class="input">
         <label for="content">Content:</label>
-        <input type="text" name="content" value="Admin dice:">
+        <textarea class="input-content" type="text" name="content" >Admin dice:</textarea>
       </div>
-      <div class="">
-        <label for="categories">Categories:</label>
-        <select class="" name="category_id">
+      <div class="input">
+        <label for="categories">Category:</label>
+        <select class="input" name="category_id">
           @foreach ($categories as $cat)
             <option value="{{$cat->id}}">{{$cat->name}}</option>
           @endforeach
         </select>
       </div>
-      <button type="submit" name="button">Invia</button>
+      <div class="input">
+        <button type="submit" name="button">Invia</button>
+      </div>
+
     </form>
   </div>
 
