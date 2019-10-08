@@ -1,7 +1,7 @@
 @extends('layout.base')
 
 @section('content')
-  <form  action="#" method="post">
+  <form  action="{{route('post.update', $post->id)}}" method="post">
     @csrf
     @method('POST')
     <div class="">

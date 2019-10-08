@@ -93,7 +93,15 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validated = $request->validate([
+        'title'=>'required',
+        'author'=>'required',
+        'content'=>'required',
+        'category_id'=>'required'
+      ]);
+      Post::findOrFail($id)->update($validated);
+
+      return redirect('/');
     }
 
     /**
