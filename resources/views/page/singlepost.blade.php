@@ -14,7 +14,12 @@
     </button>
 
     <p>{!!$post->content!!}</p>
-
+    <div class="tags">
+      Tags:
+      @foreach ($post->tags as $tag)
+        <span> {{$tag->name}} </span>
+      @endforeach
+    </div>
   </div>
 
 @endsection
