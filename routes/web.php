@@ -25,3 +25,5 @@ Route::get('/admin/post/{id}/edit', 'PostController@edit')->name('post.edit');
 Route::post('/{id}', 'PostController@update')->name('post.update');
 
 Route::get('/{id}', 'PostController@destroy')->name('post.destroy');
+
+Route::get('/tag/{id}', 'TagsController@show')->name('tag.show');

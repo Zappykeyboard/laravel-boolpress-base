@@ -17,7 +17,7 @@
     <div class="tags">
       Tags:
       @foreach ($post->tags as $tag)
-        <span> {{$tag->name}} </span>
+        <a href='{{route('tag.show', $tag->id)}}'> {{$tag->name}} </a>
       @endforeach
     </div>
   </div>
