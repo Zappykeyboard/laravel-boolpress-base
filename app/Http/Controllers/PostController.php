@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
 use DateTime;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NotifyChange;
 
 class PostController extends Controller
 {
@@ -99,8 +101,12 @@ class PostController extends Controller
         'content'=>'required',
         'category_id'=>'required'
       ]);
-      Post::findOrFail($id)->update($validated);
 
+
+      $post = Post::findOrFail($id);
+      $post->update($validated);
+
+      Mail::to('admin@example.com')->send(new NotifyChange($post));
       return redirect('/');
     }
 
