@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('author');
             $table->text('content');
             $table->text('title');
+            $table->string('img')->nullable();
             $table->dateTime('creation_date');
         });
     }
