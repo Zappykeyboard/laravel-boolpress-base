@@ -14,7 +14,7 @@
     </button>
 
     <p>{!!$post->content!!}</p>
-    <p> <img src="public/img/post-60.jpg" alt="No image!"></p>
+    <p> <img src="img/{{$post->img}}" alt="No image!"></p>
     <div class="tags">
       Tags:
       @foreach ($post->tags as $tag)
