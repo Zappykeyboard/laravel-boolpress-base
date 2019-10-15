@@ -99,11 +99,26 @@ class PostController extends Controller
         'title'=>'required',
         'author'=>'required',
         'content'=>'required',
-        'category_id'=>'required'
+        'category_id'=>'required',
+        'img'=> 'nullable|image|mimes:jpeg,jpg,png,gif,svg|max:2048'
       ]);
 
 
       $post = Post::findOrFail($id);
+
+      $file = $request->file('img');
+
+      if ($file){
+        $targetPath = 'img';
+        $targetFile = 'post-'.$id.".".$file->getClientOriginalExtension();
+
+        $file->move($targetPath, $targetFile);
+
+        $validated['img']=$targetFile;
+      }
+
+
+
       $post->update($validated);
 
       Mail::to('admin@example.com')->send(new NotifyChange($post));

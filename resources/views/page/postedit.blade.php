@@ -2,7 +2,11 @@
 
 @section('content')
   <div class="container">
-    <form class='post-form'  action="{{route('post.update', $post->id)}}" method="post">
+    <form class='post-form'
+          action="{{route('post.update', $post->id)}}"
+          method="post"
+          accept-charset="UTF-8"
+          enctype="multipart/form-data">
       @csrf
       @method('POST')
       <div class="input">
@@ -12,6 +16,9 @@
       <div class="input">
         <label for="author">Author:</label>
         <input type="text" name="author" value="{{$post->author}}">
+      </div>
+      <div class="input">
+        <input type="file" name="img" accept="image/*">
       </div>
       <div class="input">
         <label for="content">Content:</label>
